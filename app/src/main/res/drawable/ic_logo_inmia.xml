@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Techo / triángulo superior -->
+    <path
+        android:pathData="M50,10 L80,38 L70,38 L70,75 L30,75 L30,38 L20,38 Z"
+        android:strokeColor="#3D7A7A"
+        android:strokeWidth="4"
+        android:fillColor="#00000000"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"/>
+
+    <!-- Puerta -->
+    <path
+        android:pathData="M42,75 L42,55 Q42,50 50,50 Q58,50 58,55 L58,75"
+        android:strokeColor="#3D7A7A"
+        android:strokeWidth="4"
+        android:fillColor="#00000000"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"/>
+</vector>
