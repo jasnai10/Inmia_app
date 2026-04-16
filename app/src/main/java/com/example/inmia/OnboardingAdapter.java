@@ -14,27 +14,32 @@ public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.On
 
     private final Context context;
 
-    // Datos de cada página: imagen, título, descripción
+    // Imágenes — estas se quedan igual (no son strings)
     private final int[] images = {
             R.drawable.onboarding1,
             R.drawable.onboarding2,
             R.drawable.onboarding3
     };
 
-    private final String[] titles = {
-            "Encuentra tu hogar ideal",
-            "Explora propiedades",
-            "Conecta con agentes"
-    };
-
-    private final String[] descriptions = {
-            "Descubre miles de propiedades en venta y alquiler adaptadas a tus necesidades y presupuesto.",
-            "Filtra por ubicación, precio y características. Visualiza cada detalle antes de decidir.",
-            "Contacta directamente con agentes verificados y agenda visitas desde la app."
-    };
+    // Títulos y descripciones — ahora se cargan desde strings.xml
+    private final String[] titles;
+    private final String[] descriptions;
 
     public OnboardingAdapter(Context context) {
         this.context = context;
+
+        // Se inicializan en el constructor usando context.getString()
+        titles = new String[]{
+                context.getString(R.string.onboarding_title_1),
+                context.getString(R.string.onboarding_title_2),
+                context.getString(R.string.onboarding_title_3)
+        };
+
+        descriptions = new String[]{
+                context.getString(R.string.onboarding_desc_1),
+                context.getString(R.string.onboarding_desc_2),
+                context.getString(R.string.onboarding_desc_3)
+        };
     }
 
     @NonNull
@@ -64,7 +69,7 @@ public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.On
         OnboardingViewHolder(@NonNull View itemView) {
             super(itemView);
             imgOnboarding = itemView.findViewById(R.id.imgOnboarding);
-            tvTitle = itemView.findViewById(R.id.tvTitle);
+            tvTitle       = itemView.findViewById(R.id.tvTitle);
             tvDescription = itemView.findViewById(R.id.tvDescription);
         }
     }

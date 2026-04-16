@@ -37,14 +37,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     ? etForgotEmail.getText().toString().trim() : "";
 
             if (TextUtils.isEmpty(email)) {
-                tilForgotEmail.setError("Ingresa tu correo");
+                tilForgotEmail.setError(getString(R.string.forgot_error_empty));
             } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                tilForgotEmail.setError("Correo no válido");
+                tilForgotEmail.setError(getString(R.string.forgot_error_invalid));
             } else {
                 tilForgotEmail.setError(null);
                 // TODO: lógica de envío real
                 Snackbar.make(v,
-                        "Enlace enviado a " + email,
+                        getString(R.string.forgot_success, email),
                         Snackbar.LENGTH_LONG).show();
             }
         });

@@ -31,9 +31,9 @@ public class OnboardingActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_onboarding);
 
-        viewPager = findViewById(R.id.viewPager);
-        btnNext = findViewById(R.id.btnNext);
-        tvSkip = findViewById(R.id.tvSkip);
+        viewPager        = findViewById(R.id.viewPager);
+        btnNext          = findViewById(R.id.btnNext);
+        tvSkip           = findViewById(R.id.tvSkip);
         layoutIndicators = findViewById(R.id.layoutIndicators);
 
         // Configurar adapter
@@ -53,10 +53,10 @@ public class OnboardingActivity extends AppCompatActivity {
 
                 if (position == TOTAL_PAGES - 1) {
                     // Última página → botón "Empezar"
-                    btnNext.setText("Empezar");
-                    tvSkip.setVisibility(View.INVISIBLE); // Ocultar "Saltar" en última página
+                    btnNext.setText(getString(R.string.onboarding_start));
+                    tvSkip.setVisibility(View.INVISIBLE);
                 } else {
-                    btnNext.setText("Continuar");
+                    btnNext.setText(getString(R.string.onboarding_continue));
                     tvSkip.setVisibility(View.VISIBLE);
                 }
             }
@@ -81,11 +81,10 @@ public class OnboardingActivity extends AppCompatActivity {
     private void goToLogin() {
         Intent intent = new Intent(OnboardingActivity.this, LoginActivity.class);
         startActivity(intent);
-        System.out.println("Hola");
-        finish(); // No regresar al onboarding con el botón atrás
+        finish();
     }
+
     private void setupIndicators() {
-        ImageView[] indicators = new ImageView[TOTAL_PAGES];
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -93,12 +92,10 @@ public class OnboardingActivity extends AppCompatActivity {
         params.setMargins(8, 0, 8, 0);
 
         for (int i = 0; i < TOTAL_PAGES; i++) {
-            indicators[i] = new ImageView(this);
-            indicators[i].setImageDrawable(
-                    getDrawable(R.drawable.indicator_inactive)
-            );
-            indicators[i].setLayoutParams(params);
-            layoutIndicators.addView(indicators[i]);
+            ImageView indicator = new ImageView(this);
+            indicator.setImageDrawable(getDrawable(R.drawable.indicator_inactive));
+            indicator.setLayoutParams(params);
+            layoutIndicators.addView(indicator);
         }
     }
 
