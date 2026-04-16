@@ -33,6 +33,18 @@
             android:exported="false"
             android:theme="@style/Theme.Inmia.NoActionBar"/>
 
+        <!-- FORGOT PASSWORD -->
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Inmia.NoActionBar"/>
+
+        <!-- REGISTER -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Inmia.NoActionBar"/>
+
         <!-- MAIN -->
         <activity
             android:name=".MainActivity"
