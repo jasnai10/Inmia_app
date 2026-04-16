@@ -81,9 +81,9 @@ public class OnboardingActivity extends AppCompatActivity {
     private void goToLogin() {
         Intent intent = new Intent(OnboardingActivity.this, LoginActivity.class);
         startActivity(intent);
+        System.out.println("Hola");
         finish(); // No regresar al onboarding con el botón atrás
     }
-
     private void setupIndicators() {
         ImageView[] indicators = new ImageView[TOTAL_PAGES];
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
